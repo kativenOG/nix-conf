@@ -1,0 +1,34 @@
+# 
+# Multimedia 
+#
+
+# Screenshot
+bindsym $mod+Shift+S exec grimshot save area ~/Pictures/Screenshots/$(date '+%Y-%m-%d-%T').png
+
+# Focus laptop display 
+# focus output eDP-1
+# exec swaymsg focus output eDP-1 # but not During Output  
+
+# Two displays 
+output eDP-1 pos 0 0 
+output DP-4 pos 1920 0 
+
+# Bind workspaces
+workspace 1 output DP-4
+workspace 2 output DP-4
+workspace 3 output eDP-1
+workspace 4 output DP-4
+workspace 5 output eDP-1
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+
+# Toggle laptop screen
+bindsym $mod+s output eDP-1 toggle
+
+# Clamshell mode 
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+exec_always '[ -z $(grep -q open /proc/acpi/button/lid/LID0/state) ] && swaymsg output eDP-1 enable || swaymsg output eDP-1 disable'
+

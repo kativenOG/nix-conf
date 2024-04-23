@@ -1,0 +1,26 @@
+# All of my aliases 
+
+alias vim="nvim"
+alias neofetch="neofetch --kitty --size none"
+alias moon="curl wttr.in/Moon"
+alias sun="curl wttr.in/Verona"
+alias reboot='systemctl reboot'
+alias poweroff='systemctl poweroff'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ls="ls --color=auto"
+alias ll="ls -alh"
+alias l="ls -lh"
+alias clera="clear"
+alias clrae="clear"
+alias space_left="df -h"
+alias restart_nm="sudo systemctl restart nm-priv-helper.service"
+alias battery="upower -i `upower -e | grep 'BAT'` | grep percentage"
+alias battery_status="upower -i `upower -e | grep 'BAT'` "
+alias set_brightness="sudo brightnessctl --class='backlight' s $1"
+alias kooha='flatpak run io.github.seadve.Kooha'
+alias storage='ncdu'
+# ONO:
+alias dc="sudo docker-compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml "
