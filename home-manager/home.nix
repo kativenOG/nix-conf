@@ -3,6 +3,8 @@
   imports = [
 	#Waybar
 	./config/waybar.nix
+	#Rofi
+	./config/rofi.nix
 	#Neovim
 	./config/neovim.nix
 	#Git

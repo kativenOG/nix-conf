@@ -6,8 +6,10 @@
   bottomBar = {
     layer= "top";
     position= "bottom";
+
+    modules-center= ["memory" "cpu" "disk"];
     modules-left= ["sway/workspaces"];
-    modules-right= ["network" "battery" "pulseaudio"];
+    modules-right= [ "pulseaudio" "network" "battery"];
     "sway/workspaces"= {
       disable-scroll= true;
       all-outputs= true;
@@ -32,6 +34,20 @@
         "7"= "7";
         "8"= "8";
       };
+    };
+    "memory" = {
+      	interval = 5;
+      	format = " {}%";
+        tooltip = true;
+    };
+    "cpu" = {
+      	interval = 5;
+      	format = " {usage:2}%";
+        tooltip = true;
+    };
+    "disk" = {
+        format = " {free}";
+        tooltip = true;
     };
     "battery"= {
         states= {
@@ -113,7 +129,7 @@
 		border-radius: 5px;
 	}
 	
-	#battery, #network,#pulseaudio {
+        #disk,#cpu,#memory,#battery, #network,#pulseaudio {
 		background-color: #4c566a;
 		padding: 0px 10px;
 		margin: 5px 0px;
@@ -145,6 +161,18 @@
 	
 	#battery {
 	    color: #a3be8c;
+	}
+        
+	#disk{
+	    color:  #dc7633;
+	}
+
+	#memory{
+	    color: #dc7633;
+	}
+
+	#cpu{
+	    color:  #dc7633;
 	}
 	
 	@keyframes blink {
