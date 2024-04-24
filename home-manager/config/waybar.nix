@@ -159,7 +159,7 @@
 	  font-size: 0.38cm;
 	}
 	
-	#cpu, #memory, #disk, #battery {
+	#battery {
 	    color: #a3be8c;
 	}
 
@@ -170,7 +170,7 @@
 	    }
 	}
 	
-	#network {
+	#cpu, #memory, #disk, #network {
 		color: #d08770;
 	}
   
