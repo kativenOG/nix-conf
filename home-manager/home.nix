@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
   imports = [
+	#Waybar
+	./config/waybar.nix
 	#Neovim
 	./config/neovim.nix
 	#Git
@@ -33,6 +35,7 @@
 	
   ];
 
+  nixpkgs.config.allowUnfree =true;
   home.username = "kativen";
   home.homeDirectory = "/home/kativen";
   home.stateVersion = "23.11";

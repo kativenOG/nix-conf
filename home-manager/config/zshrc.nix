@@ -2,7 +2,8 @@
 {
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
+    enableCompletion=true;
+    #autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
        enable = true;
@@ -15,17 +16,17 @@
          "node"
        ];
     };
-   shellAlias= {
+   shellAliases= {
 	vim="nvim";
 	neofetch="neofetch --kitty --size none";
 	moon="curl wttr.in/Moon";
 	sun="curl wttr.in/Verona";
-	reboot='systemctl reboot';
-	poweroff='systemctl poweroff';
-	..="cd ..";
-	...="cd ../..";
-	....="cd ../../..";
-	.....="cd ../../../..";
+	reboot="systemctl reboot";
+	poweroff="systemctl poweroff";
+	# ..="cd ..";
+	# ...="cd ../..";
+	# ....="cd ../../..";
+	# .....="cd ../../../..";
 	ls="ls --color=auto";
 	ll="ls -alh";
 	l="ls -lh";
@@ -36,8 +37,8 @@
 	battery="upower -i `upower -e | grep 'BAT'` | grep percentage";
 	battery_status="upower -i `upower -e | grep 'BAT'` ";
 	set_brightness="sudo brightnessctl --class='backlight' s $1";
-	storage='ncdu';
+	storage="ncdu";
 	dc="sudo docker-compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
-    }
+    };
   };
 }

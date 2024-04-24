@@ -2,7 +2,8 @@
 set -e 
 
 # Setup NixOs
-# cp /etc/nixos/hardware-configuration.nix ~/nix-conf/nixos/hardware/
+rm ~/nix-conf/nixos/hardware/hardware-configuration.nix
+cp /etc/nixos/hardware-configuration.nix ~/nix-conf/nixos/hardware/
 cd /etc && sudo rm -rf nixos && sudo ln -s ~/nixos-config/nixos/ .
 
 # Setup Sway 

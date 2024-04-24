@@ -8,36 +8,36 @@
     position= "bottom";
     modules-left= ["sway/workspaces"];
     modules-right= ["network" "battery" "pulseaudio"];
-    "sway/workspaces": {
+    "sway/workspaces"= {
       disable-scroll= true;
       all-outputs= true;
       format= "{icon}";
       persistent_workspaces= {
-      	"1": [];
-      	"2": [];
-      	"3": [];
-      	"4": [];
-      	"5": [];
-      	"6": [];
-      	"7": [];
-      	"8": [];	
+      	"1"= [];
+      	"2"= [];
+      	"3"= [];
+      	"4"= [];
+      	"5"= [];
+      	"6"= [];
+      	"7"= [];
+      	"8"= [];	
       };
      format-icons= {
-        "1": "1";
-        "2": "2";
-        "3": "3";
-        "4": "4";
-        "5": "5";
-        "6": "6";
-        "7": "7";
-        "8": "8";
+        "1"= "1";
+        "2"= "2";
+        "3"= "3";
+        "4"= "4";
+        "5"= "5";
+        "6"= "6";
+        "7"= "7";
+        "8"= "8";
       };
     };
     "battery"= {
-        states: {
-            good: 80;
-            warning: 30;
-            critical: 15;
+        states= {
+            good= 80;
+            warning= 30;
+            critical= 15;
         };
         bat= "BAT0";
         format= "{icon} {capacity}%";

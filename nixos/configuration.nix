@@ -31,7 +31,7 @@
     
   users.users.kativen= {
      isNormalUser = true;
-     shell= pkgs.zsh
+     shell= pkgs.zsh;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
   
@@ -47,6 +47,7 @@
    ];
   
 
+  programs.zsh.enable=true;
   services.openssh.enable = true;
   services.printing.enable = true;    
   system.stateVersion = "23.11";

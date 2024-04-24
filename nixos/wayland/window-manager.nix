@@ -43,7 +43,7 @@ in
     grim
     slurp
     clipman
-    wl-paste
+    wl-clipboard
   ];
 
   services.dbus.enable = true;
