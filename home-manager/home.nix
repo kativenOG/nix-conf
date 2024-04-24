@@ -15,14 +15,18 @@
 	#Browser
 	firefox
 	chromium
+	telegram-desktop	
+	spotify
+	dbeaver
+
 	acpi 
 	pulsemixer 
 	imv # cli image viewer
-  nerdfonts #Font
+  	nerdfonts #Font
 	haruna #Video viewer
-  libreoffice #Office suite
-  xfce.thunar #File browser
-  nix-prefetch-github #get hash and head from github repo
+  	libreoffice #Office suite
+  	xfce.thunar #File browser
+  	nix-prefetch-github #get hash and head from github repo
 	
 	
 

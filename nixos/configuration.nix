@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   #silent boot
-  disabledModules = ["system/boot/stage-2.nix" "system/boot/stage-1.nix" "system/etc/etc.nix"];  
 
   imports =
     [
@@ -19,11 +18,11 @@
 
   time.timeZone = "Europe/Rome";
 
-  boot.loader.systemd-boot.enable=true
-  boot.loader.efi.canTouchEfiVariables=true
+  boot.loader.systemd-boot.enable=true;
+  boot.loader.efi.canTouchEfiVariables=true;
 
-  networking.hostName="katiclism"
-  networking.networkmanager.enable=true
+  networking.hostName="katiclism";
+  networking.networkmanager.enable=true;
   
   environment.sessionVariables = rec {
     XDG_CONFIG_HOME = "\${HOME}/.config";
@@ -32,6 +31,7 @@
     
   users.users.kativen= {
      isNormalUser = true;
+     shell= pkgs.zsh
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
   
@@ -46,7 +46,7 @@
     tmux
    ];
   
-  programs.zsh.enable = true;
+
   services.openssh.enable = true;
   services.printing.enable = true;    
   system.stateVersion = "23.11";

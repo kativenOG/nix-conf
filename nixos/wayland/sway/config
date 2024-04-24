@@ -1,7 +1,8 @@
 # Waybar
-exec waybar -c ./waybar/config -s ./waybar/style.css
-exec waybar -c ./waybar/clock_config -s ./waybar/clock_style.css
-exec wl-paste -t text --watch clipman store
+# exec waybar -c ./waybar/config -s ./waybar/style.css
+# exec waybar -c ./waybar/clock_config -s ./waybar/clock_style.css
+exec waybar &
+exec wl-paste -t text --watch clipman store &
 ### Variables
 set $mod Mod4
 # VI key bindings:
