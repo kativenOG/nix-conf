@@ -23,6 +23,25 @@
 	spotify
 	dbeaver
 
+        rustc
+        ripgrep
+        fd # Find alternative 
+
+        nodejs
+        tree-sitter # the one, the only 
+
+        python3
+        python311Packages.pip
+        python311Packages.pynvim
+
+        go
+        gopls
+
+        neofetch
+        btop
+
+        eza
+        ncdu
 	acpi 
 	pulsemixer 
 	imv # cli image viewer

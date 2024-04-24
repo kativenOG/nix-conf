@@ -159,22 +159,10 @@
 	  font-size: 0.38cm;
 	}
 	
-	#battery {
+	#cpu, #memory, #disk, #battery {
 	    color: #a3be8c;
 	}
-        
-	#disk{
-	    color:  #dc7633;
-	}
 
-	#memory{
-	    color: #dc7633;
-	}
-
-	#cpu{
-	    color:  #dc7633;
-	}
-	
 	@keyframes blink {
 	    to {
 	        background-color: #ffffff;

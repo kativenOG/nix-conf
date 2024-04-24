@@ -27,9 +27,9 @@
 	# ...="cd ../..";
 	# ....="cd ../../..";
 	# .....="cd ../../../..";
-	ls="ls --color=auto";
-	ll="ls -alh";
-	l="ls -lh";
+	ls="exa --color=auto";
+	ll="exa-alh";
+	l="exa -lh";
 	clera="clear";
 	clrae="clear";
 	space_left="df -h";
@@ -40,5 +40,8 @@
 	storage="ncdu";
 	dc="sudo docker-compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
+    initExtra= ''
+      export PATH=$PATH:~/.local/bin
+    '';
   };
 }

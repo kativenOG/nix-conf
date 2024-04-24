@@ -38,12 +38,17 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
-    openssh_hpn
-    git
-    zsh
+
     curl
     wget
+    openssh_hpn
+
+    zsh
+    git
     tmux
+
+    gnumake
+    gnugrep
    ];
   
 
