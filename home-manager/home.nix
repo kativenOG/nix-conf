@@ -23,6 +23,7 @@
 	spotify
 	dbeaver
 
+  clang
   rustc
   ripgrep
   fd # Find alternative 
