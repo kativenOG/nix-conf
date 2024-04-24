@@ -47,11 +47,17 @@
     git
     tmux
 
+    libimobiledevice
+    ifuse # optional, to mount using 'ifuse'
+    usbmuxd
+    usbmuxd2
+
     gnumake
     gnugrep
    ];
   
 
+  services.usbmuxd.enable = true;
   programs.zsh.enable=true;
   services.openssh.enable = true;
   services.printing.enable = true;    
