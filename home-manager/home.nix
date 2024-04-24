@@ -23,39 +23,36 @@
 	spotify
 	dbeaver
 
-        rustc
-        ripgrep
-        fd # Find alternative 
+  rustc
+  ripgrep
+  fd # Find alternative 
 
-        nodejs
-        tree-sitter # the one, the only 
+  nodejs
+  tree-sitter # the one, the only 
 
-        python3
-        python311Packages.pip
-        python311Packages.pynvim
+  python3
+  python311Packages.pip
+  python311Packages.pynvim
 
-        go
-        gopls
+  go
+  gopls
 
-        neofetch
-        btop
+  neofetch
+  btop
 
-        eza
-        ncdu
+  eza
+  ncdu
 	acpi 
 	pulsemixer 
 	imv # cli image viewer
-  	nerdfonts #Font
+  nerdfonts #Font
 	haruna #Video viewer
-  	libreoffice #Office suite
-  	xfce.thunar #File browser
-  	nix-prefetch-github #get hash and head from github repo
-	
-	
-
-	
+ 	libreoffice #Office suite
+  xfce.thunar #File browser
+  nix-prefetch-github #get hash and head from github repo
   ];
 
+  # STD stuff:
   nixpkgs.config.allowUnfree =true;
   home.username = "kativen";
   home.homeDirectory = "/home/kativen";

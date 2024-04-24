@@ -32,12 +32,13 @@
   users.users.kativen= {
      isNormalUser = true;
      shell= pkgs.zsh;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel"  "docker"]; # Enable ‘sudo’ for the user.
    };
   
   environment.systemPackages = with pkgs; [
     vim
     neovim
+    docker
 
     curl
     wget
@@ -56,6 +57,12 @@
     gnugrep
    ];
   
+  # Docker:
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = { # Make it rootless
+    enable = true;
+    setSocketVariable = true;
+  };
 
   services.usbmuxd.enable = true;
   programs.zsh.enable=true;
