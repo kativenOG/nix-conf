@@ -1,8 +1,8 @@
 # ScreenLock
-bindsym $mod+Shift+Escape exec "swaylock -f -i ./img/screenlock_bg.png -n -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff"
+bindsym $mod+Shift+Escape exec "swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff"
 
 exec swayidle -w \
-     timeout 300 'swaylock -f -i ./img/screenlock_bg.png -n -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff' \
+     timeout 300 'swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n  -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff' \
      timeout 600 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
-     before-sleep 'swaylock -f -i ./img/screenlock_bg.png -n -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff'
+     before-sleep 'swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff'
