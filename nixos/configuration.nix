@@ -35,6 +35,8 @@
      extraGroups = [ "wheel"  "docker"]; # Enable ‘sudo’ for the user.
    };
   
+  # Enable flakes and the CLI tool 
+  nix.settings.experimental-features = ["nix-command" "flakes" ]
   environment.systemPackages = with pkgs; [
     vim
     neovim
@@ -53,6 +55,8 @@
     usbmuxd
     usbmuxd2
 
+    zip
+    unzip
     gnumake
     gnugrep
    ];
