@@ -4,15 +4,19 @@
   programs.neovim = 
   {
     enable = true;
+    defaultEditor = true; 
+	# Bro Im really dumb 
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    defaultEditor = true; 
 
     extraPackages = with pkgs; [
+      wl-clipboard
+	  # All the language servers that allow me to write bad code every day of the week 
+	  gopls 
+	  nodePackages.pyright
       lua-language-server
       rnix-lsp
-      wl-clipboard
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -20,8 +24,23 @@
       luasnip
       neodev-nvim 
 
+	  # Need this for lualine and nvim-tree
+      nvim-web-devicons 
+
+	  # Toggle term
+      {
+        plugin = toggleterm-nvim;
+        type = "lua";
+        config = ''
+			require("toggleterm").setup{}
+			-- Close Current Buffer 
+			map("n", "<A-2>", ":ToggleTerm direction=tab <cr>", {remap = true, silent = true })
+			-- Close Current Buffer and Ignore changes 
+			map("n", "<A-3>", ":ToggleTerm direction=float <cr>", {remap = true, silent = true })
+		'';
+      }
+
       # Statusline
-      nvim-web-devicons
       {
         plugin = lualine-nvim;
         type = "lua";
@@ -42,7 +61,8 @@
         type = "lua";
         config = ''${builtins.readFile ./neovim/plugin/lsp.lua} '';
       }
-	  # Better Buffer del
+
+	  # Better Buffer Deletion
       {
         plugin = nvim-bufdel;
         type = "lua";
@@ -57,6 +77,14 @@
 			map("n", "<leader>C", ":BufDel! <cr>", {remap = true, silent = true })
 		'';
 	  }
+	   
+	  # File explorer 
+	  {
+        plugin = nvim-tree-lua;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/tree.lua} '';
+
+      }
       # Comment Shortcuts 
       {
         plugin = comment-nvim;
@@ -108,7 +136,7 @@
       
     ];
 
-    # Lua file general stuff stuff 
+    # Lua file general stuff 
     extraLuaConfig = ''
 
       ${builtins.readFile ./neovim/options.lua}
