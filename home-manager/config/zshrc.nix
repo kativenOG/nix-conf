@@ -17,16 +17,12 @@
        ];
     };
    shellAliases= {
-	vim="nvim";
+	lvim="nvim";
 	neofetch="neofetch --kitty --size none";
 	moon="curl wttr.in/Moon";
 	sun="curl wttr.in/Verona";
 	reboot="systemctl reboot";
 	poweroff="systemctl poweroff";
-	# ..="cd ..";
-	# ...="cd ../..";
-	# ....="cd ../../..";
-	# .....="cd ../../../..";
 	ls="exa --color=auto";
 	ll="exa-alh";
 	l="exa -lh";

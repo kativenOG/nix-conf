@@ -1,3 +1,4 @@
+-- STD 
 require('telescope').setup({
 	extensions = {
     	fzf = {
@@ -10,4 +11,16 @@ require('telescope').setup({
   	}
 })
 
+-- Keybindings 
+local map = vim.keymap.set
+local tsbuiltin = require('telescope.builtin')
+local actions = require("telescope.actions")
+
+-- Essential 
+map('n', '<leader>f', tsbuiltin.find_files, {})
+-- Buffers 
+map('n', '<leader>b', tsbuiltin.buffers, {}) -- Open buffer lists 
+map('n', '<leader>o', tsbuiltin.oldfiles, {}) -- Open Oldfiles list
+
+-- Native sorter for better performances 
 require('telescope').load_extension('fzf')

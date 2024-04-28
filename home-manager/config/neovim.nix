@@ -42,20 +42,43 @@
         type = "lua";
         config = ''${builtins.readFile ./neovim/plugin/lsp.lua} '';
       }
-
+	  # Better Buffer del
+      {
+        plugin = nvim-bufdel;
+        type = "lua";
+		config = ''
+			require('bufdel').setup {
+			  next = 'tabs',
+			  quit = true,  -- quit Neovim when last buffer is closed
+			}
+			-- Close Current Buffer 
+			map("n", "<leader>c", ":BufDel <cr>", {remap = true, silent = true })
+			-- Close Current Buffer and Ignore changes 
+			map("n", "<leader>C", ":BufDel! <cr>", {remap = true, silent = true })
+		'';
+	  }
       # Comment Shortcuts 
       {
         plugin = comment-nvim;
         type = "lua";
         config = ''${builtins.readFile ./neovim/plugin/comment.lua} '';
       }
-
       # Auto Completion 
       friendly-snippets # remember that flutter is not added by default
       {
         plugin = nvim-cmp;
         type = "lua";
         config = ''${builtins.readFile ./neovim/plugin/cmp.lua} '';
+      }
+	  # Maybe I can do this with telescope 
+      {
+      	plugin=bufferline-nvim;
+	    type = "lua";
+	    config = ''
+			require("bufferline").setup{}
+	    	vim.api.nvim_set_keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+	    	vim.api.nvim_set_keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+	    '';
       }
 
       # Telescope 
@@ -75,9 +98,9 @@
           p.tree-sitter-python
           p.tree-sitter-go
           p.tree-sitter-json
-          #p.tree-sitter-yaml
-          #p.tree-sitter-proto
-          #p.tree-sitter-dockerfile
+          p.tree-sitter-yaml
+          p.tree-sitter-proto
+          p.tree-sitter-dockerfile
         ]));
         type = "lua";
         config = ''${builtins.readFile ./neovim/plugin/treesitter.lua} '';
