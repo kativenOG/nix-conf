@@ -28,6 +28,13 @@ require('neodev').setup()
 -- Configuring the Language Servers
 local lspconfig = require("lspconfig")
 
+-- Bash lsp 
+lspconfig["bashls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+
 -- Lua Lsp
 lspconfig["lua_ls"].setup {
     on_attach = on_attach,

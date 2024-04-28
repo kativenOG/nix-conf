@@ -8,16 +8,19 @@
 	# Bro Im really dumb 
     viAlias = true;
     vimAlias = true;
-    vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+
       wl-clipboard
+
 	  # All the language servers that allow me to write bad code every day of the week 
 	  gopls 
 	  nodePackages.pyright
+	  nodePackages.bash-language-server
 	  yaml-language-server
       lua-language-server
       rnix-lsp
+
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -25,8 +28,20 @@
       luasnip
       neodev-nvim 
 
-	  # Need this for lualine and nvim-tree
+	  # Need this for lualine, nvim-tree and alpha
       nvim-web-devicons 
+
+	  # Landing page
+	  plenary-nvim # dependecy
+	  {
+        plugin = alpha-nvim;
+        type = "lua";
+        config = ''
+			 require'alpha'.setup(require'alpha.themes.dashboard'.config)
+		'';
+      }
+
+
 
 	  # Toggle term
       {

@@ -18,7 +18,7 @@
     };
    shellAliases= {
 	lvim="nvim";
-	neofetch="neofetch --kitty --size none";
+	neofetch="neofetch --kitty";
 	moon="curl wttr.in/Moon";
 	sun="curl wttr.in/Verona";
 	reboot="systemctl reboot";
