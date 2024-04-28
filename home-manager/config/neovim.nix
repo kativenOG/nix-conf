@@ -10,7 +10,6 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
-
       wl-clipboard
 
 	  # All the language servers that allow me to write bad code every day of the week 
@@ -20,7 +19,6 @@
 	  yaml-language-server
       lua-language-server
       rnix-lsp
-
     ];
 
     plugins = with pkgs.vimPlugins; [

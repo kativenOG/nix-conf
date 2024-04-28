@@ -31,7 +31,7 @@ local function footer()
   local print_version = "v" .. version.major .. '.' .. version.minor .. '.' .. version.patch
   local datetime = os.date('%Y/%m/%d %H:%M:%S')
 
-  return "kativen" .. "-" .. print_version .. ' - ' .. datetime
+  return "kativen" .. " - " .. print_version .. ' - ' .. datetime
 end
 
 dashboard.section.footer.val = footer()
