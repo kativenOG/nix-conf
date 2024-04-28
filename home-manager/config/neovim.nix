@@ -36,12 +36,8 @@
 	  {
         plugin = alpha-nvim;
         type = "lua";
-        config = ''
-			 require'alpha'.setup(require'alpha.themes.dashboard'.config)
-		'';
+        config = ''${builtins.readFile ./neovim/plugin/alpha.lua}'';
       }
-
-
 
 	  # Toggle term
       {
@@ -65,8 +61,8 @@
 
       # Theme
       {
-        plugin = nord-nvim;
-        config = "colorscheme nord";
+        plugin = tokyonight-nvim;
+        config = "colorscheme tokyonight-storm";
       }
 
       # LSP 

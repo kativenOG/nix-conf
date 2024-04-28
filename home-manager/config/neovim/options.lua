@@ -21,7 +21,8 @@ vim.o.mouse = 'a'
 -- Key Mappings 
 local map = vim.keymap.set
 -- Close current window
-map("n", "<leader>q", ":q <cr>", {silent = true }) 
+map("n", "<leader>q", ":q <cr>", {silent = true })  -- not forced
+map("n", "<leader>Q", ":q! <cr>", {silent = true }) -- forced
 -- Save Buffer 
 map("n", "<leader>w", ":w <cr>", {silent = true })  -- Current
 map("n", "<leader>W", ":wa <cr>", {silent = true }) -- All 
