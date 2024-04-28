@@ -6,6 +6,7 @@
     [
 	#hardware optimization
 	./hardware/hardware-configuration.nix	
+        #./hardware/xps_13_plus.nix
 
 	#audio
 	./audio/audio.nix
@@ -29,11 +30,16 @@
     XCURSOR_SIZE = "24";
   };
     
-  users.users.kativen= {
-     isNormalUser = true;
-     shell= pkgs.zsh;
-     extraGroups = [ "wheel"  "docker"]; # Enable ‘sudo’ for the user.
-   };
+  users.users.kativen = {
+    isNormalUser = true;
+    extraGroups = [ "wheel"  "docker" "networkmanager"]; 
+    shell= pkgs.zsh;
+    # leave browsers here for camera support
+    packages = with pkgs; [
+      firefox
+    ];
+  };
+
   
   # Enable flakes and the CLI tool 
   nix.settings.experimental-features = ["nix-command" "flakes" ];
@@ -43,15 +49,21 @@
     docker
 
     curl
+    openvpn
     wget
     openssh_hpn
 
     zsh
     git
     tmux
+    file
 
-    libimobiledevice
-    ifuse # optional, to mount using 'ifuse'
+
+    lshw #Hardware information
+    upower
+    v4l-utils
+    libimobiledevice # ios support 
+    ifuse 
     usbmuxd
     usbmuxd2
 

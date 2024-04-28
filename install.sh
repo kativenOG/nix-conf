@@ -1,5 +1,5 @@
  #!/usr/bin/env bash
-set -e 
+#set -e 
 
 # Setup NixOs
 rm ~/nix-conf/nixos/hardware/hardware-configuration.nix

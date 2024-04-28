@@ -1,58 +1,97 @@
 {config, pkgs, ...}:
+
 {
-  programs.neovim = {
+  programs.neovim = 
+  {
     enable = true;
-    coc.enable = true; #Autocompletion
-    plugins = [
-      { plugin = pkgs.vimPlugins.onehalf;
-        config = ''
-          set background=dark
-          colorscheme onehalfdark
-          let g:airline_theme='onehalfdark'
-          hi Normal guibg=NONE ctermbg=NONE
-          hi LineNr guibg=NONE ctermbg=NONE
-          hi SignColumn guibg=NONE ctermbg=NONE
-          hi EndOfBuffer guibg=NONE ctermbg=NONE
-          hi Visual cterm=none ctermbg=darkgrey ctermfg=white
-        '';
-      }
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    defaultEditor = true; 
 
-      #File browser
-      #ctrl + b to open
-      #ctrl + w + w to switch focus
-      { plugin = pkgs.vimPlugins.nerdtree;
-        config = ''
-          nnoremap <silent> <C-b> :NERDTreeToggle<CR>
-          let g:NERDTreeShowHidden = 1
-          let g:NERDTreeMinimalUI = 1
-          let g:NERDTreeIgnore = []
-          let g:NERDTreeStatusline = ""
-          highlight NERDTreeCWD ctermfg=white
-          " Exit Vim if NERDTree is the only window remaining in the only tab.
-          autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-        '';
-      }
-
-      #Icons
-      pkgs.vimPlugins.vim-devicons
-      
-      #Language support
-      pkgs.vimPlugins.vim-nix
-      pkgs.vimPlugins.coc-python
-      pkgs.vimPlugins.coc-go
-      pkgs.vimPlugins.vim-javascript
-      pkgs.vimPlugins.coc-css
-      pkgs.vimPlugins.coc-emmet
-      pkgs.vimPlugins.coc-html
-      pkgs.vimPlugins.coc-json
+    extraPackages = with pkgs; [
+      lua-language-server
+      rnix-lsp
+      wl-clipboard
     ];
 
-    extraConfig = ''
-      set number
-      syntax on
-      set shiftwidth=2
-      set smarttab
-      set clipboard+=unnamedplus 
+    plugins = with pkgs.vimPlugins; [
+      # Skill issues 
+      luasnip
+      neodev-nvim 
+
+      # Statusline
+      nvim-web-devicons
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/lualine.lua} '';
+      }
+
+      # Theme
+      {
+        plugin = nord-nvim;
+        config = "colorscheme nord";
+      }
+
+      # LSP 
+      cmp-nvim-lsp
+      cmp_luasnip
+      {
+        plugin = nvim-lspconfig;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/lsp.lua} '';
+      }
+
+      # Comment Shortcuts 
+      {
+        plugin = comment-nvim;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/comment.lua} '';
+      }
+
+      # Auto Completion 
+      friendly-snippets # remember that flutter is not added by default
+      {
+        plugin = nvim-cmp;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/cmp.lua} '';
+      }
+
+      # Telescope 
+      telescope-fzf-native-nvim
+      {
+        plugin = telescope-nvim;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/telescope.lua} '';
+      }
+
+      # Treesitter 
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-python
+          p.tree-sitter-go
+          p.tree-sitter-json
+          #p.tree-sitter-yaml
+          #p.tree-sitter-proto
+          #p.tree-sitter-dockerfile
+        ]));
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/treesitter.lua} '';
+      }
+      
+    ];
+
+    # Lua file general stuff stuff 
+    extraLuaConfig = ''
+
+      ${builtins.readFile ./neovim/options.lua}
+
     '';
   };
+
 }
+
