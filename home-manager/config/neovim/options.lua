@@ -3,6 +3,9 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- STD 
+
+vim.g.smartcase= true
+vim.g.smartindent= true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.clipboard = 'unnamedplus'
