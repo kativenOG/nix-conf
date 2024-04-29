@@ -40,8 +40,10 @@
     # My beloved 
     go
     gopls
+	postgresql_16
 
     # Utils
+	glow # Markdown renderer
     haruna # Video viewer
     gnome.nautilus # File manager 
     libsForQt5.kdialog# For cool CLI scripts
