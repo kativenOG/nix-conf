@@ -67,7 +67,6 @@ lspconfig["pyright"].setup({
   	root_dir = function()
   	     return vim.loop.cwd()
   	end,
-	cmd = {"pyright"},
 })
 
 -- Yaml lsp

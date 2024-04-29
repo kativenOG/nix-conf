@@ -18,7 +18,7 @@ local actions = require("telescope.actions")
 
 -- Essential 
 map('n', '<leader>f', tsbuiltin.find_files, {})
-map('n', '<leader><leader>', tsbuiltin.live_grep, {})
+map('n', '<leader><leader><leader>', tsbuiltin.live_grep, {})
 -- Buffers 
 map('n', '<leader>b', tsbuiltin.buffers, {}) -- Open buffer lists 
 map('n', '<leader>o', tsbuiltin.oldfiles, {}) -- Open Oldfiles list

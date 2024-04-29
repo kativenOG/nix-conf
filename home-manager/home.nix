@@ -32,9 +32,10 @@
     rustc
     ripgrep
     nodejs
+	nodePackages.pyright
     python3
     python311Packages.pip
-    python311Packages.pynvim # VENV MY BROTHA 
+    # python311Packages.pynvim  
     tree-sitter # the one, the only 
 
     # My beloved 
