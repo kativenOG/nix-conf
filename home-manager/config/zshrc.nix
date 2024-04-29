@@ -34,7 +34,7 @@
 	battery_status="upower -i `upower -e | grep 'BAT'` ";
 	set_brightness="sudo brightnessctl --class='backlight' s $1";
 	storage="ncdu";
-	dc="sudo docker-compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
+	dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
     initExtra= ''
       export PATH=$PATH:~/.local/bin:~/go/bin
