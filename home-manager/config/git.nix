@@ -10,7 +10,8 @@
       };
 	  extraConfig = {
 	  	url = {
-      	  "git@github.com" = {
+		  # Always fetch with ssh from github, so you have access rights
+      	  "git@github.com:" = {
       		 insteadOf = "https://github.com/";
       	  };
       	};

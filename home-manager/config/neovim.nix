@@ -48,13 +48,7 @@
       {
         plugin = toggleterm-nvim;
         type = "lua";
-        config = ''
-			require("toggleterm").setup{}
-			-- Close Current Buffer 
-			map("n", "<A-2>", ":ToggleTerm direction=tab <cr>", {remap = true, silent = true })
-			-- Close Current Buffer and Ignore changes 
-			map("n", "<A-3>", ":ToggleTerm direction=float <cr>", {remap = true, silent = true })
-		'';
+        config = '' ${builtins.readFile ./neovim/plugin/term.lua}'';
       }
 
       # Statusline
