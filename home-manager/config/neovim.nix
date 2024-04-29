@@ -37,6 +37,13 @@
         config = ''${builtins.readFile ./neovim/plugin/alpha.lua}'';
       }
 
+	  # Git integration
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''${builtins.readFile ./neovim/plugin/git.lua}'';
+	  }
+
 	  # Toggle term
       {
         plugin = toggleterm-nvim;
@@ -60,7 +67,7 @@
       # Theme
       {
         plugin = tokyonight-nvim;
-        config = "colorscheme tokyonight-storm";
+        config = "colorscheme tokyonight-moon";
       }
 
       # LSP 

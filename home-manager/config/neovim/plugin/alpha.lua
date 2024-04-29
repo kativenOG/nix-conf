@@ -37,3 +37,5 @@ end
 dashboard.section.footer.val = footer()
 
 require("alpha").setup(dashboard.config)
+
+vim.keymap.set('n', '<leader>;', ":Alpha<CR>", {})
