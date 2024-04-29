@@ -8,11 +8,12 @@ require("nvim-tree").setup({
       enable = true,
     },
   },
+  update_focused_file = {
+	enable = true,
+  },
   filters = {
     dotfiles = true,
   },
 })
 
--- Key Mappings
-map = vim.api.nvim_set_keymap
-map("n", "<leader>e", ":NvimTreeToggle<cr>", {silent = true })
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<cr>", {silent = true })
