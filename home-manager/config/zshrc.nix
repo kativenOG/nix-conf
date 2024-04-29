@@ -37,7 +37,8 @@
 	dc="sudo docker-compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
     initExtra= ''
-      export PATH=$PATH:~/.local/bin
+      export PATH=$PATH:~/.local/bin:~/go/bin
+	  GOPRIVATE="github.com/ONO-Lean-Logistics/*"
     '';
   };
 }
