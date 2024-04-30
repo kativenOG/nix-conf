@@ -113,8 +113,8 @@
 			end
 
 			-- Keybindings
-			vim.keymap.set('n', 'zR', ufo.openAllFolds)
-			vim.keymap.set('n', 'zM', ufo.closeAllFolds)
+			vim.keymap.set('n', 'zoa', ufo.openAllFolds)
+			vim.keymap.set('n', 'zca', ufo.closeAllFolds)
 
 			ufo.setup{}
 	   '';
