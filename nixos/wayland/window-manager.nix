@@ -41,6 +41,7 @@ in
     xdg-utils
     glib
     grim
+	sway-contrib.grimshot
     slurp
     clipman
     wl-clipboard

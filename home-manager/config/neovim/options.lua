@@ -1,9 +1,5 @@
--- For tree-nvim 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 -- STD 
-
 vim.g.smartcase= true
 vim.g.smartindent= true
 vim.g.mapleader = ' '
@@ -29,3 +25,14 @@ map("n", "<leader>W", ":wa <cr>", {silent = true }) -- All
 -- Easily switch in between windows 
 map("n", "<C-l>", "<c-w>w", {silent = true }) -- Next 
 map("n", "<C-h>", "<c-w>W", {silent = true }) -- Previous  
+
+
+-- for UFO 
+vim.o.foldcolumn = '1' 
+vim.o.foldlevel = 99 
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+-- For tree-nvim 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

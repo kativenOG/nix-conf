@@ -16,7 +16,6 @@ local colors = {
   magenta  = '#c678dd',
   red      = '#ec5f67',
 }
-
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -36,6 +35,7 @@ local conditions = {
 local config = {
   theme = 'tokyonight',
   options = {
+ 	disabled_filetypes = { 'packer', 'NvimTree' },
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',

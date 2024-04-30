@@ -20,15 +20,19 @@
 	# Apps
 	firefox
 	chromium
-    vscode
-	telegram-desktop	
+
     teams-for-linux
+	telegram-desktop	
 	spotify
-	dbeaver
+
     libreoffice #Office suite
+    vscode
+	dbeaver
+	bloomrpc
+
 
     # Stuff that shouldn't be here 
-    clang
+	libgcc
     rustc
     ripgrep
     nodejs
