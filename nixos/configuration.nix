@@ -53,6 +53,7 @@
     wget
     openssh_hpn
 
+		gcc
     zsh
     git
     tmux
@@ -60,7 +61,6 @@
 
 
     lshw #Hardware information
-    upower
     v4l-utils
     libimobiledevice # ios support 
     ifuse 
