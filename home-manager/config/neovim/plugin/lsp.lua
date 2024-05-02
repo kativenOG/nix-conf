@@ -8,7 +8,7 @@ local on_attach = function(_, bufnr)
 	bufmap('gD', vim.lsp.buf.declaration)
 	bufmap('gI', vim.lsp.buf.implementation)
 	bufmap('<leader>D', vim.lsp.buf.type_definition)
-	bufmap('grr', require('telescope.builtin').lsp_references)
+	bufmap('gr', require('telescope.builtin').lsp_references)
 	bufmap('K', vim.lsp.buf.hover)
 
 

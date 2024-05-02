@@ -33,6 +33,8 @@ local conditions = {
 
 -- Config
 local config = {
+  -- laststatus = 3,
+  -- globalstatus = true,
   theme = 'tokyonight',
   options = {
  	disabled_filetypes = { 'packer', 'NvimTree' },
