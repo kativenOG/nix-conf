@@ -29,6 +29,11 @@ map("n", "<leader>W", ":wa <cr>", {silent = true }) -- All
 -- Easily switch in between windows 
 map("n", "<C-l>", "<c-w>w", {silent = true }) -- Next 
 map("n", "<C-h>", "<c-w>W", {silent = true }) -- Previous  
+-- Move Line up or Line Down 
+map("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
+map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v
 
 
 -- for UFO 
