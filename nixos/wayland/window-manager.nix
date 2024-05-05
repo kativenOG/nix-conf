@@ -31,24 +31,23 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    kitty 
-    rofi
-    waybar
     sway
     dbus-sway-environment
     configure-gtk
+    rofi
+    waybar
     wayland
     xdg-utils
+		brightnessctl
+		sway-contrib.grimshot
     glib
     grim
-	sway-contrib.grimshot
-    slurp
     clipman
     wl-clipboard
+    slurp
   ];
 
   services.dbus.enable = true;
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;

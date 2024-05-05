@@ -17,38 +17,40 @@
   
 
   home.packages = with pkgs; [
-	# Apps
-	firefox
-	chromium
+	  # Apps
+    kitty 
+				
+	  firefox
+	  chromium
 
     teams-for-linux
-	telegram-desktop	
-	spotify
+	  telegram-desktop	
+	  spotify
+
+    vscode
+	  dbeaver
+	  bloomrpc
 
     libreoffice #Office suite
-    vscode
-	dbeaver
-	bloomrpc
-
+		zotero
 
     # Stuff that shouldn't be here 
-	libgcc
+		libgcc
     rustc
     ripgrep
     nodejs
-	nodePackages.pyright
+		yarn
+	  nodePackages.pyright
     python3
     python311Packages.pip
-    # python311Packages.pynvim  
-    tree-sitter # the one, the only 
 
     # My beloved 
     go
     gopls
-	postgresql_16
+		postgresql_16
 
     # Utils
-	glow # Markdown renderer
+	  glow # Markdown renderer
     haruna # Video viewer
     gnome.nautilus # File manager 
     libsForQt5.kdialog# For cool CLI scripts

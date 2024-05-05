@@ -13,26 +13,26 @@
          "node"
        ];
     };
-   shellAliases= {
-	lvim="nvim";
-	neofetch="neofetch --kitty";
-	moon="curl wttr.in/Moon";
-	sun="curl wttr.in/Verona";
-	ls="exa --color=auto";
-	ll="exa-alh";
-	l="exa -lh";
-	clera="clear";
-	clrae="clear";
-	space_left="df -h";
-	battery="acpi";
-	set_brightness="sudo brightnessctl --class='backlight' s $1";
-	storage="ncdu";
-	dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
+    shellAliases= {
+      lvim="nvim";
+	    neofetch="neofetch --kitty";
+	    moon="curl wttr.in/Moon";
+	    sun="curl wttr.in/Verona";
+	    ls="exa --color=auto";
+	    ll="exa-alh";
+	    l="exa -lh";
+	    clera="clear";
+	    clrae="clear";
+	    space_left="df -h";
+	    battery="acpi";
+	    set_brightness="sudo brightnessctl --class='backlight' s $1";
+	    storage="ncdu";
+	    dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
     initExtra= ''
       export PATH=$PATH:~/.local/bin:~/go/bin
-	  GOPRIVATE="github.com/ONO-Lean-Logistics/*"
-	  export CGO_ENABLED=1
+		  GOPRIVATE="github.com/ONO-Lean-Logistics/*"
+		  export CGO_ENABLED=1
     '';
   };
 }

@@ -1,20 +1,14 @@
 { config, pkgs, ... }:
 {
-  #silent boot
-
   imports =
     [
-	#hardware optimization
-	./hardware/hardware-configuration.nix	
-        #./hardware/xps_13_plus.nix
+				./hardware/main.nix	
 
-	#audio
-	./audio/audio.nix
-        
-	#wayland
-	./wayland/general.nix
-	./wayland/window-manager.nix
-	./wayland/login-manager.nix
+				./audio/audio.nix
+  			      
+				./wayland/general.nix
+				./wayland/window-manager.nix
+				./wayland/login-manager.nix
     ];
 
   time.timeZone = "Europe/Rome";
@@ -34,20 +28,17 @@
     isNormalUser = true;
     extraGroups = [ "wheel"  "docker" "networkmanager"]; 
     shell= pkgs.zsh;
-    # leave browsers here for camera support
+    # leave browsers here for camera support 
     packages = with pkgs; [
       firefox
     ];
   };
 
-  
   # Enable flakes and the CLI tool 
   nix.settings.experimental-features = ["nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     vim
     neovim
-    docker
-
 
     curl
     openvpn
@@ -60,10 +51,12 @@
     tmux
     file
 
-
-    lshw #Hardware information
+    docker
+				
+    lshw # Hardware information
     v4l-utils
-    libimobiledevice # ios support 
+    libimobiledevice # enables iOS device pairing 
+		brightnessctl
     ifuse 
     usbmuxd
     usbmuxd2
@@ -80,69 +73,19 @@
     enable = true;
     setSocketVariable = true;
   };
-  # nix-ld 
-  hardware.opengl.enable = true;
-  programs.nix-ld.enable = true;
-	# Sets up all the libraries to load
-  programs.nix-ld.libraries = with pkgs; [
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    atk
-    cairo
-    cups
-    curl
-    dbus
-    expat
-    fontconfig
-    freetype
-    fuse3
-    gdk-pixbuf
-    glib
-    gtk3
-    icu
-    libGL
-    libappindicator-gtk3
-    libdrm
-    libglvnd
-    libnotify
-    libpulseaudio
-    libunwind
-    libusb1
-    libuuid
-    libxkbcommon
-    libxml2
-    mesa
-    nspr
-    nss
-    openssl
-    pango
-    pipewire
-    stdenv.cc.cc
-    systemd
-    vulkan-loader
-    vulkan-tools
-    xorg.libX11
-    xorg.libXScrnSaver
-    xorg.libXcomposite
-    xorg.libXcursor
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libxcb
-    xorg.libxkbfile
-		xorg.libXinerama
-    xorg.libxshmfence
-    zlib
-  ];
 
+	# Random stuff that you will always need 
+	nixpkgs.config.allowUnfree = true;
   services.usbmuxd.enable = true;
   programs.zsh.enable=true;
   services.openssh.enable = true;
   services.printing.enable = true;    
   system.stateVersion = "23.11";
+
+	# MODULES #############
+  # nix-ld (turn it on to run Alien executables on nixos) 
+  services.nixld.enable = false;
+  # Turn on if using xps13 plus!
+  services.xps13.enable = true;
+
 }

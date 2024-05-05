@@ -1,9 +1,6 @@
 -- STD 
 
---vim.g.wrap= false
 vim.opt.wrap = false
---	vim.g.wrapmargin= 0
---	vim.g.textwidth= 0
 vim.g.smartcase= true
 vim.g.smartindent= true
 vim.g.mapleader = ' '
