@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }:
-
+with lib;                      
 let
   dbus-sway-environment = pkgs.writeTextFile {
     name = "dbus-sway-environment";
@@ -12,7 +12,6 @@ let
       systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
     '';
   };
-
   configure-gtk = pkgs.writeTextFile {
     name = "configure-gtk";
     destination = "/bin/configure/-gtk";
@@ -27,36 +26,39 @@ let
         gnome_schema=org.gnome.desktop.interface
       '';
   };
+  cfg = config.services.sway;
+in {
 
-in
-{
-  environment.systemPackages = with pkgs; [
-    sway
-    dbus-sway-environment
-    configure-gtk
-    rofi
-    waybar
-    wayland
-    xdg-utils
-		brightnessctl
-		sway-contrib.grimshot
-    glib
-    grim
-    clipman
-    wl-clipboard
-    slurp
-  ];
-
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  options.services.sway = {
+    enable = mkEnableOption "sway wm";
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  config = mkIf cfg.enable {
 
+		xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+		environment.systemPackages = with pkgs; [
+				sway
+				dbus-sway-environment
+				sway-contrib.grimshot
+				configure-gtk
+	  ];
+   
+		programs.sway = {
+				enable = true;
+				wrapperFeatures.gtk = true;
+		};
+
+		services.greetd = {
+		  enable = true;
+		  settings = rec {
+        initial_session = {
+          command = "${pkgs.sway}/bin/sway";
+          user = "kativen";
+			  };
+        default_session = initial_session;
+      };
+    };
+
+	};
 }

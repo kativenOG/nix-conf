@@ -15,7 +15,7 @@ set $menu rofi -show run
 #set $menu dmenu
 include /etc/sway/config-vars.d/*
 ### Output configuration
-output * bg ./lib/img/wallpaper.png fill
+output * bg ~/.config/lib/img/wallpaper.png fill
 
 ### Windows:
 #

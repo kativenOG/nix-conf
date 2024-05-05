@@ -37,7 +37,6 @@
     # Stuff that shouldn't be here 
 		libgcc
     rustc
-    ripgrep
     nodejs
 		yarn
 	  nodePackages.pyright
@@ -56,6 +55,7 @@
     libsForQt5.kdialog# For cool CLI scripts
     neofetch
     btop
+    ripgrep
     pulsemixer 
     fd  # find alternative 
     imv # cli image viewer

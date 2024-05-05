@@ -30,6 +30,9 @@ in
   };
 
   config = mkIf cfg.enable {
+		# leave browsers here for camera support 
+    users.users.kativen.packages = pkgs.firefox;
+
 		boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" "i915" ];
 
   	# https://discourse.nixos.org/t/i915-driver-has-bug-for-iris-xe-graphics/25006/10
