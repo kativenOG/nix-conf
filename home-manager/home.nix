@@ -35,16 +35,12 @@
 		zotero
 
     # Stuff that shouldn't be here 
-		libgcc
     rustc
     ripgrep
     nodejs
 		yarn
 	  nodePackages.pyright
-    python3
-    python311Packages.pip
 
-    # My beloved 
     go
     gopls
 		postgresql_16
@@ -53,16 +49,15 @@
 	  glow # Markdown renderer
     haruna # Video viewer
     gnome.nautilus # File manager 
-    libsForQt5.kdialog# For cool CLI scripts
     neofetch
     btop
     pulsemixer 
-    fd  # find alternative 
-    imv # cli image viewer
-    eza # ls alternative
-    ncdu # storage cli utility 
-    acpi # battery utility
-    nerdfonts #Font
+    fd   			# find alternative 
+    imv  			# CLI image viewer
+    eza  			# ls alternative
+    ncdu 			# storage cli utility 
+    acpi 			# battery utility
+    nerdfonts # Font
 
     # I want to start using this  
     nix-prefetch-github #get hash and head from github repo

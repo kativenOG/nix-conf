@@ -45,7 +45,6 @@
     wget
     openssh_hpn
 
-		gcc
     zsh
     git
     tmux
@@ -84,7 +83,7 @@
 
 	# MODULES #############
   # nix-ld (turn it on to run Alien executables on nixos) 
-  services.nixld.enable = false;
+  services.nixld.enable = true;
   # Turn on if using xps13 plus!
   services.xps13.enable = true;
 
