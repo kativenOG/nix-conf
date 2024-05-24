@@ -11,7 +11,6 @@ let
         repo = "ivsc-firmware";
         rev = "10c214fea5560060d387fbd2fb8a1af329cb6232";
         sha256 = "sha256-kEoA0yeGXuuB+jlMIhNm+SBljH+Ru7zt3PzGb+EPBPw=";
-
       };
 
       installPhase = ''
