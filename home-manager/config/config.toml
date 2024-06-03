@@ -1,1 +1,37 @@
-/home/kativen/.config/workstyle/config.toml
+# Config for workstyle
+#
+# Format:
+# "pattern" = "icon"
+#
+# The pattern will be used to match against the application name, class_id or WM_CLASS.
+# The icon will be used to represent that application.
+#
+# Note if multiple patterns are present in the same application name,
+# precedence is given in order of apparition in this file.
+# 
+# https://github.com/pierrechevalier83/workstyle
+# NB: simulink it to ${XDG_CONFIG_HOME}/workstyle/config.toml  
+
+"vim" = ""
+"kitty" = ""
+"nvim" = ""
+"code" = ""	
+"private browsing" = ""
+"chrome" = ""
+"firefox" = ""
+"google" = ""
+"github" = ""
+"nautilus" = ""
+"file manager" = ""
+"github" = ""
+"dmenu" = ""
+"music" = ""
+".pdf" = ""
+"postman" = "󱂛"
+"bloomrpc" = "󱂛"
+"dbeaver" = ""
+"org.tejegram.desktop" = ""
+
+[other]
+fallback_icon = "󰫸"
+deduplicate_icons = true 
