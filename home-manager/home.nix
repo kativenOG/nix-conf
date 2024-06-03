@@ -49,7 +49,7 @@
 	  glow # Markdown renderer
     haruna # Video viewer
     gnome.nautilus # File manager 
-    neofetch
+    fastfetch 
     btop
     pulsemixer 
     fd   			# find alternative 

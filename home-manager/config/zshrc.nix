@@ -15,9 +15,10 @@
     };
     shellAliases= {
       lvim="nvim";
-	    neofetch="neofetch --kitty";
+	    neofetch="fastfetch";
+			sun="curl wttr.in/Verona";
 	    moon="curl wttr.in/Moon";
-	    sun="curl wttr.in/Verona";
+			wltree="swaymsg -t get_tree";
 	    ls="exa --color=auto";
 	    ll="exa-alh";
 	    l="exa -lh";
