@@ -32,6 +32,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     sway
+		workstyle # Sway workspaces with style 
     dbus-sway-environment
     configure-gtk
     rofi

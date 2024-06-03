@@ -1,6 +1,8 @@
 # Waybar
 exec waybar &
 exec wl-paste -t text --watch clipman store &
+# WorkStyle 
+exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 ### Variables
 set $mod Mod4
 # VI key bindings:

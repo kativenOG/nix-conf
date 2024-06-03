@@ -8,32 +8,17 @@
     position= "bottom";
 
     modules-center= ["memory" "cpu" "disk"];
-    modules-left= ["sway/workspaces"];
+    modules-left= ["nixosIcon" "sway/workspaces"];
     modules-right= [ "pulseaudio" "network" "battery"];
+
+    "nixosIcon" = {
+		  format = "";
+		 };
+
     "sway/workspaces"= {
       disable-scroll= true;
+			format= "{icon}";
       all-outputs= true;
-      format= "{icon}";
-      persistent_workspaces= {
-      	"1"= [];
-      	"2"= [];
-      	"3"= [];
-      	"4"= [];
-      	"5"= [];
-      	"6"= [];
-      	"7"= [];
-      	"8"= [];	
-      };
-     format-icons= {
-        "1"= "1";
-        "2"= "2";
-        "3"= "3";
-        "4"= "4";
-        "5"= "5";
-        "6"= "6";
-        "7"= "7";
-        "8"= "8";
-      };
     };
     "memory" = {
       	interval = 5;

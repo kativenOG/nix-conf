@@ -42,3 +42,32 @@ vim.o.foldenable = true
 -- For tree-nvim 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Autoformat
+vim.api.nvim_create_augroup("AutoFormat", {})
+
+-- Python
+vim.api.nvim_create_autocmd(
+    "BufWritePost",
+    {
+        pattern = "*.py",
+        group = "AutoFormat",
+        callback = function()
+            vim.cmd("silent !black --quiet %")
+            vim.cmd("edit")
+        end,
+    }
+)
+
+-- Golang 
+vim.api.nvim_create_autocmd(
+    "BufWritePost",
+    {
+        pattern = "*.go",
+        group = "AutoFormat",
+        callback = function()
+            vim.cmd("silent !gofmt -w %")
+            vim.cmd("edit")
+        end,
+    }
+)
