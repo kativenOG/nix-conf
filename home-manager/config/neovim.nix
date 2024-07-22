@@ -166,6 +166,8 @@
             p.tree-sitter-bash
             p.tree-sitter-lua
             p.tree-sitter-python
+            p.tree-sitter-c
+            p.tree-sitter-rust
             p.tree-sitter-go
             p.tree-sitter-json
             p.tree-sitter-yaml

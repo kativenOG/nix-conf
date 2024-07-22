@@ -1,46 +1,34 @@
 { config, pkgs, ... }:
 {
   imports = [
-	#Waybar
 	./config/waybar.nix
-	#Rofi
 	./config/rofi.nix
-	#Git
 	./config/git.nix
-	#ZSH
 	./config/zshrc.nix
-	#Alacritty
 	./config/kitty.nix
-	#Neovim
 	./config/neovim.nix
   ];
   
 
   home.packages = with pkgs; [
-	  # Apps
     kitty 
-				
 	  firefox
 	  chromium
-
     teams-for-linux
 	  telegram-desktop	
 	  spotify
-
     vscode
 	  dbeaver
 	  bloomrpc
-
-    libreoffice #Office suite
+    libreoffice 
 		zotero
-
+				
     # Stuff that shouldn't be here 
+	  # nodePackages.pyright
     rustc
     ripgrep
     nodejs
 		yarn
-	  nodePackages.pyright
-
     go
     gopls
 		postgresql_16
