@@ -39,13 +39,37 @@ export CGO_ENABLED=1
 
 # Create a dir and create a container from a image that uses the dir as his binded volume
 dcreate() { # dcreate <volume_name> <image_name> <container_name>
-  if [[ "$1" == "--help" || "$1" == "-h" || -z "$1" ]]; then
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 		echo -e "Usage: dcreate <volume_name> <image_name> <container_name>\nCreate a dir and create a container from a image that uses the dir as his binded volume.\nIf a directory with the same name already exists it is used as the binded volume for the container."
 	elif [[ -z "$1" || -z "$2" || -z "$3" ]]; then 
 		echo -e "one of the parameter is not defined, remember:\n\t\$1: volume_name\n\t\$2: image_name\n\t\$3: container_name\n"
   else
 		mkdir -p "$1" 
 		docker run -it --name "$3" --volume $(pwd)/"$1":/data "$2" /bin/sh
+	fi
+}
+
+# Connect to a docker container tty 
+dconnect() { # dcreate <volume_name> <image_name> <container_name>
+  if [[ -z "$1" ]]; then
+		echo -e "Usage: dconnect <container_name>\nOpen a bash shell connection to a container virtual tty."
+	  
+  else
+		# FOUND is used to decide if we have to also search considering stopped containers or not:
+		FOUND = 0
+		if docker ps | grep -q $1; then
+				FOUND=1
+		fi
+
+		# Start stopped container 
+		if  [ "$FOUND" -eq 0 ] && docker ps -a | grep -q $1; then  # Start the stopped container 
+				docker start $1 
+				docker exec -it $1 /bin/sh
+		elif  [ "$FOUND" -eq 1 ]; then # And connect to it :) 
+				docker exec -it $1 /bin/sh
+		else 
+				echo -e "no container named $1 has been found."
+		fi
 	fi
 }
     '';
