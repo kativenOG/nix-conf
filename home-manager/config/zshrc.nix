@@ -29,14 +29,8 @@
 	    set_brightness="sudo brightnessctl --class='backlight' s $1";
 	    storage="ncdu";
 	    dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
-		  # dcreate=""; 
     };
     initExtra= ''
-export PATH=$PATH:~/.local/bin:~/go/bin
-GOPRIVATE="github.com/ONO-Lean-Logistics/*"
-export CGO_ENABLED=1
-
-
 # Create a dir and create a container from a image that uses the dir as his binded volume
 dcreate() { # dcreate <volume_name> <image_name> <container_name>
   if [[ "$1" == "--help" || "$1" == "-h" ]]; then

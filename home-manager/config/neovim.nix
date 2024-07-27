@@ -111,6 +111,14 @@
 	          '';
 	      }
 	   
+				# LaTex plugin 
+				{
+          plugin = vimtex; 
+          type = "lua";
+          config = ''${builtins.readFile ./neovim/plugin/vimtex.lua} '';
+
+        }
+
 	      # File explorer 
 	      {
           plugin = nvim-tree-lua;

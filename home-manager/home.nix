@@ -12,54 +12,57 @@
 
   home.packages = with pkgs; [
     kitty 
+    vscode
+	  dbeaver
 	  firefox
 	  chromium
     teams-for-linux
 	  telegram-desktop	
-	  spotify
-    vscode
-	  dbeaver
 	  bloomrpc
+
+	  spotify
+
+    ripgrep
+		latexrun 
     libreoffice 
 		zotero
 				
-    # Stuff that shouldn't be here 
-	  # nodePackages.pyright
     rustc
-    ripgrep
+
     nodejs
 		yarn
+
     go
     gopls
+
 		postgresql_16
 
     # Utils
+    btop
+    fastfetch 
+    pulsemixer # TUI for audio
+    gnome.nautilus # File manager 
 	  glow # Markdown renderer
     haruna # Video viewer
-    gnome.nautilus # File manager 
-    fastfetch 
-    btop
-    pulsemixer 
+    zathura # Document viewer with vim keybindings
     fd   			# find alternative 
     imv  			# CLI image viewer
     eza  			# ls alternative
     ncdu 			# storage cli utility 
     acpi 			# battery utility
     nerdfonts # Font
-
-    # I want to start using this  
-    nix-prefetch-github #get hash and head from github repo
   ];
 
   # ENV VARIABLES 
   home.sessionVariables = {
     EDITOR="nvim";
+		PATH="$PATH:~/.local/bin:~/go/bin";
+		CGO_ENABLED=1;
   };
-
 
   nixpkgs.config={
   	allowUnfree =true;
-	permittedInsecurePackages = ["nix-2.15.3"]; # I should rebuild a package but im not good enough 
+		permittedInsecurePackages = ["nix-2.15.3"]; 
   };	
 
 

@@ -48,6 +48,7 @@ window {
     spacing: 0;
     children:  [mainbox];
     orientation: horizontal;
+		borde-radius: 3px;
 }
 
 mainbox {

@@ -38,10 +38,10 @@ bindsym $mod+r exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
 floating_modifier $mod normal
+
+# Toggle the current focused window between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -71,7 +71,6 @@ bindsym $mod+Shift+Right move right
 
 #
 # Workspaces:
-# TODO: change workspace names
 # Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -94,15 +93,12 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 
-
 # Switch the current container between different layout styles
 bindsym $mod+q layout tabbed
 bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
-# Toggle the current focus between tiling and floating mode
-bindsym $mod+Shift+space floating toggle
 
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
