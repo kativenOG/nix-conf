@@ -9,7 +9,7 @@
 
     modules-center= ["temperature" "memory" "cpu" "disk"];
     modules-left= ["custom/nixosIcon" "sway/workspaces"];
-    modules-right= [ "pulseaudio" "network" "battery"];
+    modules-right= [ "sway/language" "pulseaudio" "network" "battery"];
 
 		# Left 
     "custom/nixosIcon" = {
@@ -49,6 +49,9 @@
     };
 
 		# Right
+		"sway/language"= {
+			format= "{short} {variant}";
+		};
     "battery"= {
         states= {
             good= 80;
@@ -134,7 +137,7 @@
 	 	border-radius: 5px;
 	 }
 	 
-   #temperature,#disk,#cpu,#memory,#battery,#network,#pulseaudio {
+   #temperature,#disk,#cpu,#memory,#battery,#network,#pulseaudio,#language {
 	 	background-color: #4c566a;
 	 	padding: 0px 10px;
 	 	margin: 5px 0px;

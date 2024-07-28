@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
-services.greetd = {
+# No display manager, directly boot into wm 
+services.greetd = { 
   enable = true;
   settings = rec {
     initial_session = {

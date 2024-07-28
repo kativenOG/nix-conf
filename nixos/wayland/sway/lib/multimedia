@@ -5,13 +5,10 @@
 # Screenshot
 bindsym $mod+Shift+S exec grimshot save area ~/Pictures/Screenshots/$(date '+%Y-%m-%d-%T').png
 
-# Focus laptop display 
-# focus output eDP-1
-# exec swaymsg focus output eDP-1 # but not During Output  
-
 # Two displays 
 output eDP-1 pos 0 0 
 output DP-4 pos 1920 0 
+# exec swaymsg focus output eDP-1  # to focus laptop display 
 
 # Bind workspaces
 workspace 1 output DP-4

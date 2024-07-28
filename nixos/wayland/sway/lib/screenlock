@@ -8,8 +8,8 @@ bindsym $mod+Shift+i exec "swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/
 # Automatic lock/sleep with swayidle
 # DPMS=Display Power Management System, lets you turn on or off the screen without suspending the laptop (suspend to idle)
 exec swayidle -w \
-     timeout 90 'swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n  -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff' \
-     timeout 180 'swaymsg "output * dpms off"' \
+     timeout 180 'swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n  -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff' \
+     timeout 300 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
-		 timeout 300 'systemctl suspend ' \
+		 timeout 400 'systemctl suspend ' \
      before-sleep 'swaylock -f -i ~/nix-conf/nixos/wayland/sway/lib/img/screenlock_bg.png -n  -r --indicator-x-position 100 --indicator-y-position 100 --ring-color 000000ff'	

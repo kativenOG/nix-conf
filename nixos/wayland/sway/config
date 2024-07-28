@@ -137,7 +137,11 @@ mode "resize" {
 bindsym $mod+m mode "resize"
 
 
-# Include All Libraries 
-include ./lib/*
+# External config files
+include ./lib/inputs
+include ./lib/multimedia
+include ./lib/screenlock
+
 # Include STD configs 
 include /etc/sway/config.d/*
+
