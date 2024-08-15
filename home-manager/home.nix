@@ -43,7 +43,7 @@
     fastfetch 
     pulsemixer # TUI for audio
     gnome.nautilus # File manager 
-	  glow # Markdown renderer
+    glow # Markdown renderer
     haruna # Video viewer
     zathura # Document viewer with vim keybindings
     fd   			# find alternative 
@@ -51,7 +51,12 @@
     eza  			# ls alternative
     ncdu 			# storage cli utility 
     acpi 			# battery utility
-    nerdfonts # Font
+    nerdfonts 		# Fonts
+
+	# Fun
+  	cowsay
+	pipes-rs
+  	cbonsai
   ];
 
   # ENV VARIABLES 
