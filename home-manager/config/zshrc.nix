@@ -31,15 +31,25 @@
 	    dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
     initExtra= ''
+# Open neovim by connection to a nvim server inside a container
+dvim() { 
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+		echo -e "Usage: dvim <port_name> specific the port that is being exposed by the nvim server inside the docker container"
+	else
+		server_ip="localhost:$1"
+		nvim --remote-ui --server $server_ip 
+  fi
+}
+
 # Create a dir and create a container from a image that uses the dir as his binded volume
 dcreate() { # dcreate <volume_name> <image_name> <container_name>
   if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-		echo -e "Usage: dcreate <volume_name> <image_name> <container_name>\nCreate a dir and create a container from a image that uses the dir as his binded volume.\nIf a directory with the same name already exists it is used as the binded volume for the container."
+		echo -e "Usage: dcreate <volume_name> <image_name> <container_name>\nCreate a dir and create a container from a image that uses the dir as his binded volume.\nIf a directory with the same name already exists it is used as the binded volume for the container.\nRemember that port 9321 is always remapped for neovim."
 	elif [[ -z "$1" || -z "$2" || -z "$3" ]]; then 
 		echo -e "one of the parameter is not defined, remember:\n\t\$1: volume_name\n\t\$2: image_name\n\t\$3: container_name\n"
   else
 		mkdir -p "$1" 
-		docker run -it --name "$3" --volume $(pwd)/"$1":/data "$2" /bin/sh
+		docker run -it -p 9321:9321 --name "$3" --volume $(pwd)/"$1":/data "$2" 
 	fi
 }
 

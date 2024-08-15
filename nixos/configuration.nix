@@ -4,11 +4,9 @@
     [
 				./hardware/main.nix	
 
-				./audio/audio.nix
-  			      
-				./wayland/general.nix
-				./wayland/window-manager.nix
-				./wayland/login-manager.nix
+				./modules/audio.nix
+				./modules/window_manager.nix
+				./modules/uni_vpn.nix
     ];
 
   time.timeZone = "Europe/Rome";

@@ -22,8 +22,9 @@
 
 	  spotify
 
-    ripgrep
 		latexrun 
+		texliveTeTeX
+    ripgrep
     libreoffice 
 		zotero
 				
