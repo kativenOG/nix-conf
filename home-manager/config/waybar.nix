@@ -111,7 +111,7 @@
 	  color: white;
 	 }
  	 #custom-nixosIcon {
-     color: #eceff4;
+     	color: #eceff4;
 	 	margin: 5px;
 	 	border-radius: 10px;
 	 }
@@ -121,6 +121,7 @@
 	 	margin-left: 10px;
 	 	border-radius: 5px;
 	 }
+
 	 #workspaces button {
 	     padding: 0 10px;
 	     color: #eceff4;
@@ -156,14 +157,14 @@
 	 }
 
 	 #clock {
-	 	background-color: #4c566a;
+	   background-color: #4c566a;
 	   color: rgb(240,240,240);
 	   padding-left: 5px;
 	   padding-right: 5px;
 	   padding-top: 1px;
 	   padding-bottom: 1px;
-	 	margin-top: 5px;
-	 	margin-bottom: 5px;
+	   margin-top: 5px;
+	   margin-bottom: 5px;
 	   font-size: 0.38cm;
 	 }
 	 
@@ -179,7 +180,7 @@
 	 }
 	 
 	 #temperature, #cpu, #memory, #disk, #network {
-	 	color: #d08770;
+	 	color: #81a1c1; 
 	 }
    
    '';

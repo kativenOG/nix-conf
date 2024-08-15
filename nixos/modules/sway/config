@@ -17,21 +17,21 @@ set $menu rofi -show run
 #set $menu dmenu
 include /etc/sway/config-vars.d/*
 ### Output configuration
-output * bg ./lib/img/wallpaper.png fill
+output * bg ./lib/img/wild.png fill
 
 ### Windows:
 #
 # Remove borders from applications:
+# reduce the border size 
+font pango:lemon 1  
+# Just standard i3 stuff
 no_focus [window_role="pop-up"] 
-font pango:lemon 1
-for_window [class=".*"] title_format "<span font='Tewi 1'> </span>"
 hide_edge_borders smart
 default_border normal 2
 default_floating_border pixel 2
-client.focused    #d08770 #d08770 #d08770 #d08770 #d08770 
+client.focused    #88c0d0 #88c0d0 #88c0d0 #88c0d0 #88c0d0
 client.unfocused  #405156 #405156 #405156 #405156 #405156 
-
-# Stablish gaps between windows and from the screen edge
+# gaps between windows and from the screen edge
 gaps inner 5
 gaps outer 1
 
