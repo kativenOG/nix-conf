@@ -13,39 +13,42 @@
   home.packages = with pkgs; [
     kitty 
     vscode
-	  dbeaver
-	  firefox
-	  chromium
+	dbeaver
+	
+	anki
+	firefox
+	chromium
+
+
+	gitkraken
+	thunderbird
     teams-for-linux
-	  telegram-desktop	
-	  bloomrpc
+	discord
+	telegram-desktop	
 
-	  spotify
+	insomnia
+	bloomrpc
+	drawio
 
-		latexrun 
-		texliveTeTeX
+	spotify
+	
+	zsh
+	direnv
+
+	latexrun 
+	texliveTeTeX
     ripgrep
     libreoffice 
-		zotero
-				
-    rustc
-
-    nodejs
-		yarn
-
-    go
-    gopls
-
-		postgresql_16
+	zotero # zotero_7 
 
     # Utils
     btop
     fastfetch 
-    pulsemixer # TUI for audio
-    gnome.nautilus # File manager 
-    glow # Markdown renderer
-    haruna # Video viewer
-    zathura # Document viewer with vim keybindings
+    pulsemixer 		# TUI for audio
+    gnome.nautilus  # File manager 
+    glow 			# Markdown renderer
+    haruna 			# Video viewer
+    zathura 		# Document viewer with vim keybindings
     fd   			# find alternative 
     imv  			# CLI image viewer
     eza  			# ls alternative
@@ -62,13 +65,13 @@
   # ENV VARIABLES 
   home.sessionVariables = {
     EDITOR="nvim";
-		PATH="$PATH:~/.local/bin:~/go/bin";
+		PATH="/home/kativen/.local/bin/:/home/kativen/go/bin:$PATH";
 		CGO_ENABLED=1;
   };
 
   nixpkgs.config={
   	allowUnfree =true;
-		permittedInsecurePackages = ["nix-2.15.3"]; 
+	permittedInsecurePackages = ["nix-2.15.3"]; 
   };	
 
 

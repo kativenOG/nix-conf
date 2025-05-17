@@ -1,8 +1,10 @@
 # Waybar
 exec waybar &
+exec mako
 exec wl-paste -t text --watch clipman store &
 # WorkStyle 
 exec_always --no-startup-id workstyle &> /tmp/workstyle.log
+# Email client
 ### Variables
 set $mod Mod4
 # VI key bindings:
@@ -47,6 +49,10 @@ bindsym $mod+r exec $menu
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 floating_modifier $mod normal
+
+# Max and min sizes for floating windows 
+floating_minimum_size 200 x 200 
+floating_maximum_size  1200 x 900
 
 # Toggle the current focused window between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
@@ -108,18 +114,28 @@ bindsym $mod+q layout tabbed
 bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
+# ignore popups when in full screen mode 
+popup_during_fullscreen smart
 
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
 
-# These apps always start floating
+# Apps settings
 #
+# Thunderbird
+for_window [app_id="thunderbird"] floating enabled, resize set height 700, , resize set width 1100, move container to scratchpad, focus, sticky enable
+bindsym $mod+shift+q [app_id="thunderbird"] scratchpad show 
+exec_always thunderbird
+# Firefox 
+assign [app_id="firefox"] number "2: *"
+# Spotify
+for_window [class="Spotify"] floating enabled, resize set height 700, , resize set width 1100, move container to scratchpad, focus, sticky enable
 # Telegram 
-for_window [app_id="org.telegram.desktop"] floating enabled  
+for_window [app_id="org.telegram.desktop"] floating enabled, resize set height 800, resize set width 1000, move container to scratchpad, focus, sticky enable
 # Microsoft Teams
-for_window [instance="teams-for-linux"] floating enabled
+for_window [instance="teams-for-linux"] floating enabled, resize set height 800, resize set width 1000, move container to scratchpad, focus, sticky enable
 # Nautilus file manager 
-for_window [app_id="org.gnome.Nautilus"] floating enabled  
+for_window [app_id="org.gnome.Nautilus"] floating enabled, resize set height 700, resize set width 800
 
 #
 # Scratchpad:

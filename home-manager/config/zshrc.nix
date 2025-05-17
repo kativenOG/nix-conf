@@ -26,7 +26,7 @@
 	    clrae="clear";
 	    space_left="df -h";
 	    battery="acpi";
-	    set_brightness="sudo brightnessctl --class='backlight' s $1";
+	    set_brightness="brightnessctl --class='backlight' s $1";
 	    storage="ncdu";
 	    dc="docker compose -p ono -f docker-compose.yml -f docker-compose.plugins.yml ";
     };
@@ -76,6 +76,7 @@ dconnect() { # dcreate <volume_name> <image_name> <container_name>
 		fi
 	fi
 }
+eval "$(direnv hook zsh)"
     '';
   };
 }

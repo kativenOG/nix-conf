@@ -50,20 +50,30 @@
 
     docker
 				
+	usbutils
+    bluez 
+    bluez-tools
+	blueman
     lshw # Hardware information
     v4l-utils
     libimobiledevice # enables iOS device pairing 
-		brightnessctl
+	brightnessctl
     ifuse 
     usbmuxd
     usbmuxd2
 
+	libavif
     zip
     unzip
     gnumake
     gnugrep
    ];
   
+  # Bluethoth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; 
+  services.blueman.enable = true;
+
   # Docker:
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = { # Make it rootless

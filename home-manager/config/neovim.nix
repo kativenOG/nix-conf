@@ -12,11 +12,11 @@
     extraPackages = with pkgs; [
       wl-clipboard
 
-	   # All the language servers that allow me to write bad code every day of the week 
-	    gopls 
-	    nodePackages.pyright
-	    nodePackages.bash-language-server
-	    yaml-language-server
+	  # All the language servers that allow me to write bad code every day of the week 
+	  gopls 
+	  nodePackages.pyright
+	  nodePackages.bash-language-server
+	  yaml-language-server
       lua-language-server
       rnix-lsp
     ];
@@ -26,25 +26,25 @@
         luasnip
         neodev-nvim 
 
-	      # Need this for lualine, nvim-tree and alpha
+	    # Need this for lualine, nvim-tree and alpha
         nvim-web-devicons 
 
-	      # Landing page
-	      plenary-nvim # dependecy
-	      {
+	    # Landing page
+	    plenary-nvim # dependecy
+	    {
           plugin = alpha-nvim;
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/alpha.lua}'';
         }
 
-	      # Git integration
+	    # Git integration
         {
           plugin = gitsigns-nvim;
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/git.lua}'';
 	      }
 
-	      # Toggle term
+	    # Toggle term
         {
           plugin = toggleterm-nvim;
           type = "lua";
@@ -111,27 +111,34 @@
 	          '';
 	      }
 	   
-				# LaTex plugin 
-				{
+		# LaTex plugin
+		{
           plugin = vimtex; 
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/vimtex.lua} '';
-
         }
 
-	      # File explorer 
-	      {
+	    # File explorer 
+	    {
           plugin = nvim-tree-lua;
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/tree.lua} '';
-
         }
+
         # Comment Shortcuts 
         {
           plugin = comment-nvim;
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/comment.lua} '';
         }
+		
+		{
+          plugin = todo-comments-nvim;
+          type = "lua";
+          config = ''local todo = require("todo-comments").setup();'';
+        }
+		
+
         # Auto Completion 
         friendly-snippets # remember that flutter is not added by default
         {
@@ -139,12 +146,13 @@
           type = "lua";
           config = ''${builtins.readFile ./neovim/plugin/cmp.lua} '';
         }
-			  # Top line that stores buffers (so I can easily switch between them 
+
+		# Top line that stores buffers (so I can easily switch between them 
         {
         	plugin=bufferline-nvim;
 	        type = "lua";
 	        config = ''
-			      require("bufferline").setup{}
+			    require("bufferline").setup{}
 	        	vim.api.nvim_set_keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 	        	vim.api.nvim_set_keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 	        '';
@@ -158,7 +166,7 @@
           config = ''${builtins.readFile ./neovim/plugin/telescope.lua} '';
         }
 
-		    # LSP 
+		# LSP 
         cmp-nvim-lsp
         cmp_luasnip
         {

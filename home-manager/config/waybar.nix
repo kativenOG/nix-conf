@@ -90,10 +90,12 @@
   topBar= {
     layer= "bottom";
     position= "top";
-    modules-center= ["clock"];
-    "clock"= {
+    modules-center= [ "clock" ];
+	"clock"= {
         format= "{:%H:%M}";
-    };
+		tooltip= true;
+		tooltip-format= "{:%d-%m-%Y}";
+	};
   };
   };
 

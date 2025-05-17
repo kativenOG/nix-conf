@@ -3,6 +3,7 @@
 	environment.systemPackages = with pkgs; [
  	  sway
  	  # swayfx # I wish 
+	  mako # Notification daemon 
  	  workstyle # Sway workspaces with style 
  	  rofi # Menu 
  	  waybar # top/bottom Menu Bar 
@@ -38,7 +39,7 @@
  	    unset -v SSH_ASKPASS
  	  '';
 
- 	users.users.kativen.extraGroups = [ "video" ];
+ 	users.users.kativen.extraGroups = [ "video" "plugdev" ];
  	programs.light.enable = true;
 
 	# systemd service to automatically rotate wallpaper every 10s 
