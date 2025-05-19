@@ -18,7 +18,7 @@
 	  nodePackages.bash-language-server
 	  yaml-language-server
       lua-language-server
-      rnix-lsp
+      nil
     ];
 
     plugins = with pkgs.vimPlugins; [

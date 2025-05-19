@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   imports =
     [
 				./hardware/main.nix	
-
 				./modules/audio.nix
 				./modules/window_manager.nix
 				./modules/uni_vpn.nix
@@ -27,47 +26,43 @@
     extraGroups = [ "wheel"  "docker" "networkmanager"]; 
     shell= pkgs.zsh;
     # leave browsers here for camera support 
-    packages = with pkgs; [
+    packages = with pkgs-unstable; [
       firefox
     ];
   };
 
   # Enable flakes and the CLI tool 
   nix.settings.experimental-features = ["nix-command" "flakes" ];
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-
-    curl
-    openvpn
-    wget
-    openssh_hpn
-
-    zsh
-    git
-    tmux
-    file
-
-    docker
-				
-	usbutils
-    bluez 
-    bluez-tools
-	blueman
-    lshw # Hardware information
-    v4l-utils
-    libimobiledevice # enables iOS device pairing 
-	brightnessctl
-    ifuse 
-    usbmuxd
-    usbmuxd2
-
-	libavif
-    zip
-    unzip
-    gnumake
-    gnugrep
+  environment.systemPackages = [
+    nixpkgs.vim
+    nixpkgs.neovim
+    nixpkgs.curl
+    nixpkgs.openvpn
+    nixpkgs.wget
+    nixpkgs.openssh_hpn
+    nixpkgs.zsh
+    nixpkgs.git
+    nixpkgs.tmux
+    nixpkgs.file
+    nixpkgs.docker
+	nixpkgs.usbutils
+    nixpkgs.bluez 
+    nixpkgs.bluez-tools
+	nixpkgs.blueman
+    nixpkgs.lshw # Hardware information
+    nixpkgs.v4l-utils
+    nixpkgs.libimobiledevice # enables iOS device pairing 
+	nixpkgs.brightnessctl
+    nixpkgs.ifuse 
+    nixpkgs.usbmuxd
+    nixpkgs.usbmuxd2
+	nixpkgs.libavif
+    nixpkgs.zip
+    nixpkgs.unzip
+    nixpkgs.gnumake
+    nixpkgs.gnugrep
    ];
+
   
   # Bluethoth
   hardware.bluetooth.enable = true;

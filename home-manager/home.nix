@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs-unstable,... }:
 {
   imports = [
 	./config/waybar.nix
@@ -13,13 +13,9 @@
   home.packages = with pkgs; [
     kitty 
     vscode
-	dbeaver
-	
+	dbeaver-bin
 	anki
-	firefox
 	chromium
-
-
 	gitkraken
 	thunderbird
     teams-for-linux

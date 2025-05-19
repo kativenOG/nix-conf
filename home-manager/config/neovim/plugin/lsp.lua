@@ -50,7 +50,7 @@ lspconfig["lua_ls"].setup {
 }
 
 -- Nix Lsp
-lspconfig["rnix"].setup {
+lspconfig["nil"].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   	root_dir = function()
