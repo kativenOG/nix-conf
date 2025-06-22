@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     [
@@ -25,42 +25,39 @@
     isNormalUser = true;
     extraGroups = [ "wheel"  "docker" "networkmanager"]; 
     shell= pkgs.zsh;
-    # leave browsers here for camera support 
-    packages = with pkgs-unstable; [
-      firefox
-    ];
   };
 
   # Enable flakes and the CLI tool 
   nix.settings.experimental-features = ["nix-command" "flakes" ];
   environment.systemPackages = [
-    nixpkgs.vim
-    nixpkgs.neovim
-    nixpkgs.curl
-    nixpkgs.openvpn
-    nixpkgs.wget
-    nixpkgs.openssh_hpn
-    nixpkgs.zsh
-    nixpkgs.git
-    nixpkgs.tmux
-    nixpkgs.file
-    nixpkgs.docker
-	nixpkgs.usbutils
-    nixpkgs.bluez 
-    nixpkgs.bluez-tools
-	nixpkgs.blueman
-    nixpkgs.lshw # Hardware information
-    nixpkgs.v4l-utils
-    nixpkgs.libimobiledevice # enables iOS device pairing 
-	nixpkgs.brightnessctl
-    nixpkgs.ifuse 
-    nixpkgs.usbmuxd
-    nixpkgs.usbmuxd2
-	nixpkgs.libavif
-    nixpkgs.zip
-    nixpkgs.unzip
-    nixpkgs.gnumake
-    nixpkgs.gnugrep
+    pkgs.vim
+    pkgs.neovim
+    pkgs.firefox
+    pkgs.curl
+    pkgs.openvpn
+    pkgs.wget
+    pkgs.openssh_hpn
+    pkgs.zsh
+    pkgs.git
+    pkgs.tmux
+    pkgs.file
+    pkgs.docker
+	pkgs.usbutils
+    pkgs.bluez 
+    pkgs.bluez-tools
+	pkgs.blueman
+    pkgs.lshw # Hardware information
+    pkgs.v4l-utils
+    pkgs.libimobiledevice # enables iOS device pairing 
+	pkgs.brightnessctl
+    pkgs.ifuse 
+    pkgs.usbmuxd
+    pkgs.usbmuxd2
+	pkgs.libavif
+    pkgs.zip
+    pkgs.unzip
+    pkgs.gnumake
+    pkgs.gnugrep
    ];
 
   
